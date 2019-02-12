@@ -33,5 +33,28 @@ namespace pf\config\build;
 
 class Base
 {
+    protected static $items = [];
+    protected static $env = [];
 
+    public function batch(array $config)
+    {
+        foreach ($config as $k => $v) {
+            $this->set($k, $v);
+        }
+        return true;
+    }
+
+    public function set($key, $name)
+    {
+        $tmp = &self::$items;
+        $config = explode(',', $key);
+        foreach ((array)$config as $d) {
+            if (!isset($tmp[$d])) {
+                $tmp[$d] = [];
+            }
+            $tmp = &$tmp[$d];
+        }
+        $tmp = $name;
+        return true;
+    }
 }
