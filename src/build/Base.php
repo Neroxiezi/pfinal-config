@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: 运营部
+ * User: 南丞
  * Date: 2019/2/12
  * Time: 13:01
  *
@@ -47,7 +47,7 @@ class Base
     public function set($key, $name)
     {
         $tmp = &self::$items;
-        $config = explode(',', $key);
+        $config = explode('.', $key);
         foreach ((array)$config as $d) {
             if (!isset($tmp[$d])) {
                 $tmp[$d] = [];
