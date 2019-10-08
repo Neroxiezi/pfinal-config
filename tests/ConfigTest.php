@@ -55,7 +55,13 @@ class ConfigTest extends \PHPUnit\Framework\TestCase
         $this->assertInternalType('string', Config::get('app.app_name'));
         $this->assertNull(Config::get('app.debug'));
     }
-
+	
+	public function testGetExtName()
+	{
+		$config = Config::getExtName('database', ['write', 'read']);
+		$this->assertNotTrue(isset($config['write']));
+	}
+    
     public function testHas()
     {
         $this->assertFalse(Config::has('app.debug'));
