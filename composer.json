@@ -1,5 +1,6 @@
 {
     "name": "nancheng/pfinal-config",
+    "description":"pfinal  config网站配置项组件"
     "authors": [
         {
             "name": "南丞",
