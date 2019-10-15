@@ -115,7 +115,7 @@
 			if (isset(self::$env[$name])) {
 				return self::$env[$name];
 			} else {
-				die("This configuration item does not exist\n");
+				return false;
 			}
 			
 		}
